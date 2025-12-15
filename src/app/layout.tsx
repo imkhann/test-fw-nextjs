@@ -1,10 +1,11 @@
-// src/app/layout.tsx
+// app/layout.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ChatbotWidget from "@/components/ChatbotWidget"; // TAMBAH INI
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        
+        <ChatbotWidget /> {/* TAMBAH INI - Chatbot akan muncul di semua halaman */}
 
         <Script src="/assets/js/main.js" strategy="afterInteractive" />
       </body>
